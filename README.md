@@ -1,14 +1,14 @@
 
 # 📊 Stock Market Sentiment Bot (Discord Edition)
 
-A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, analyzes sentiment using FinBERT, and posts a market update to your server, highlighting significant movers.
+A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, analyzes sentiment using FinBERT, and posts a market update to your server, highlighting the best and worst performers.
 
 ---
 
 ## 🚀 Features
 - Fetches financial news for the top 25 S&P 500 stocks.
 - Analyzes overall daily sentiment using FinBERT (a language model specialized for financial text).
-- Identifies and highlights stocks with significant sentiment changes (absolute sentiment > 0.65).
+- Identifies and highlights the best and worst performing stocks based on sentiment.
 - Posts a market summary to your Discord server automatically.
 
 ---
@@ -27,19 +27,21 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 ```
 📊 **Stock Market Sentiment** (July 09)
 
-**Overall Sentiment:** Positive (0.11)
+**Overall Sentiment:** Neutral (0.09)
 
-**Top Movers:**
-- **ADBE**: Strongly Positive (1.00)
-- **AMCR**: Strongly Positive (1.00)
-
-**Top Headlines & Summaries:**
-
-**ADBE**
+📈 **Best Performer**
+**ADBE** - Sentiment: Strongly Positive (1.00)
 - **Headline:** Adobe (NASDAQ:ADBE) Is Investing Its Capital With Increasing Efficiency
   **Summary:** What trends should we look for it we want to identify stocks that can multiply in value over the long term? In a...
 - **Headline:** 2 Phenomenal Stock Bargains to Buy With the Market at All-Time Highs
   **Summary:** The market assumes that generative AI will replace the Google Search engine.  Adobe's generative AI-powered image and video creation tools are industry-leading.  With the stock market at new all-time highs, investors may be a bit wary of buying stocks right now.
+
+📉 **Worst Performer**
+**AES** - Sentiment: Negative (-0.29)
+- **Headline:** Traders Eye Fed Minutes as US Equity Futures Post Narrow Gains Pre-Bell
+  **Summary:** US equity futures posted narrow gains before Wednesday's opening bell as traders looked ahead to the
+- **Headline:** AES Stock Jumps on Report That Renewable Energy Firm Is Exploring Sale
+  **Summary:** Shares in AES Corp. are jumping in premarket trading Wednesday as the renewable energy firm reportedly explores selling itself, among other options, as it faces takeover interest.
 
 #StockMarket #FinanceBot
 ```

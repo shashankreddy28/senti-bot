@@ -48,15 +48,15 @@ def get_expected_change(sentiment_score):
     Interprets the sentiment score as an expected change.
     """
     if sentiment_score > 0.5:
-        return "Strongly Positive"
+        return "🟢 Strongly Positive"
     elif sentiment_score > 0.1:
-        return "Positive"
+        return "🟢 Positive"
     elif sentiment_score < -0.5:
-        return "Strongly Negative"
+        return "🔴 Strongly Negative"
     elif sentiment_score < -0.1:
-        return "Negative"
+        return "🔴 Negative"
     else:
-        return "Neutral"
+        return "🟡 Neutral"
 
 if __name__ == "__main__":
     stocks_to_analyze = ["AAPL", "GOOGL", "MSFT"]
