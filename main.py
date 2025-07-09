@@ -1,20 +1,28 @@
-from fetch_news import get_news
-from analyze_sentiment import analyze_sentiment
+from fetch_news import get_stock_news
+from analyse_sentiment import analyze_sentiment, get_average_sentiment
 import asyncio
 from send_discord import send_discord_message
 from datetime import datetime
 
 def run_bot():
-    headlines = get_news()
-    sentiment = analyze_sentiment(headlines)
+    stocks_to_analyze = ["AAPL", "GOOGL", "MSFT"]
+    stock_news = get_stock_news(stocks_to_analyze)
+
+    all_sentiments = []
+    for stock, news_items in stock_news.items():
+        if news_items:
+            sentiment_scores = analyze_sentiment(news_items)
+            all_sentiments.extend(sentiment_scores)
+
+    average_sentiment = get_average_sentiment(all_sentiments)
+
     date = datetime.today().strftime('%B %d')
     message = f"""📊 Stock Market Sentiment ({date})
-Sentiment: {sentiment}
-Top News:
-- {headlines[0]}
-- {headlines[1]}
+Overall Sentiment: {average_sentiment:.2f}
+
 #StockMarket #FinanceBot"""
     print(message)  # For testing purposes
     asyncio.run(send_discord_message(message))
+
 if __name__ == "__main__":
     run_bot()

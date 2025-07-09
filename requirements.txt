@@ -4,3 +4,6 @@ nltk
 textblob
 python-dotenv
 discord
+finnhub-python
+transformers
+torch
