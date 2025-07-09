@@ -100,6 +100,10 @@ DISCORD_TOKEN=your_discord_bot_token
 ```bash
 python main.py
 ```
+To run the bot immediately for testing purposes:
+```bash
+python main.py --test
+```
 
 ---
 
@@ -148,6 +152,32 @@ This cron job will:
 - On weekdays (1-5, where 1 is Monday and 5 is Friday).
 - Execute your `run_bot.sh` script.
 - Redirect all standard output and standard error to `cron.log` for logging purposes.
+
+---
+
+## ☁️ Free Hosting Options
+
+Here are a few options for hosting your bot for free:
+
+### 1. PythonAnywhere
+- **Pros:** Excellent for Python scripts and web apps, built-in cron-like task scheduler, easy to set up.
+- **Cons:** Free tier has limitations on CPU time and network access.
+- **Setup:** Upload your code, set up a virtual environment, and configure a scheduled task (under the "Tasks" tab) to run your `main.py` script at the desired time.
+
+### 2. Replit
+- **Pros:** Easy to use online IDE, supports many languages, can keep bots running 24/7 (though free tier might require some workarounds to prevent sleeping).
+- **Cons:** Free tier projects might go to sleep after inactivity, requiring external pings or paid plans for continuous uptime.
+- **Setup:** Import your GitHub repository, install dependencies, and configure a "Uptime Robot" or similar service to ping your Replit app regularly to keep it awake.
+
+### 3. Heroku (with caveats)
+- **Pros:** Popular platform for deploying web apps and bots, good documentation.
+- **Cons:** Free tier has been significantly reduced or removed for many features. You might incur costs for continuous operation.
+- **Setup:** Requires a `Procfile` to specify how your bot runs. You'll need to link your GitHub repo and deploy. Be mindful of their current free tier policies.
+
+### 4. Google Cloud Platform / Amazon Web Services (Free Tiers)
+- **Pros:** Powerful, scalable, and highly customizable. Generous free tiers for new users.
+- **Cons:** Can be complex to set up for beginners, requires more technical knowledge.
+- **Setup:** Explore services like Google Cloud Run, AWS Lambda, or EC2 (for a small virtual machine) within their free tier limits. You'll need to configure triggers (e.g., Cloud Scheduler for GCP, CloudWatch Events for AWS) to run your script.
 
 ---
 
