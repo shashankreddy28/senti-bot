@@ -1,14 +1,15 @@
 
 # 📊 Stock Market Sentiment Bot (Discord Edition)
 
-A Discord bot that fetches daily financial news, analyzes sentiment using FinBERT, and posts a market update to your server.
+A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, analyzes sentiment using FinBERT, and posts a market update to your server, highlighting significant movers.
 
 ---
 
 ## 🚀 Features
-- Fetches financial news for specific stocks (AAPL, GOOGL, MSFT) from Finnhub
-- Analyzes overall daily sentiment using FinBERT (a language model specialized for financial text)
-- Posts a market summary to your Discord server automatically
+- Fetches financial news for the top 25 S&P 500 stocks.
+- Analyzes overall daily sentiment using FinBERT (a language model specialized for financial text).
+- Identifies and highlights stocks with significant sentiment changes (absolute sentiment > 0.65).
+- Posts a market summary to your Discord server automatically.
 
 ---
 
@@ -16,6 +17,7 @@ A Discord bot that fetches daily financial news, analyzes sentiment using FinBER
 - Python  
 - Finnhub API (for financial news)  
 - Transformers & PyTorch (for sentiment analysis with FinBERT)  
+- Pandas, BeautifulSoup4, lxml (for scraping S&P 500 tickers)
 - discord.py (to send automated messages)  
 - dotenv (to keep secrets out of code)
 
@@ -23,8 +25,21 @@ A Discord bot that fetches daily financial news, analyzes sentiment using FinBER
 
 ## 📸 Sample Message in Discord
 ```
-📊 Stock Market Sentiment (July 9)
-Overall Sentiment: 0.03
+📊 **Stock Market Sentiment** (July 09)
+
+**Overall Sentiment:** Positive (0.11)
+
+**Top Movers:**
+- **ADBE**: Strongly Positive (1.00)
+- **AMCR**: Strongly Positive (1.00)
+
+**Top Headlines & Summaries:**
+
+**ADBE**
+- **Headline:** Adobe (NASDAQ:ADBE) Is Investing Its Capital With Increasing Efficiency
+  **Summary:** What trends should we look for it we want to identify stocks that can multiply in value over the long term? In a...
+- **Headline:** 2 Phenomenal Stock Bargains to Buy With the Market at All-Time Highs
+  **Summary:** The market assumes that generative AI will replace the Google Search engine.  Adobe's generative AI-powered image and video creation tools are industry-leading.  With the stock market at new all-time highs, investors may be a bit wary of buying stocks right now.
 
 #StockMarket #FinanceBot
 ```
@@ -85,6 +100,7 @@ MIT License – feel free to fork, modify, and deploy your own version.
 
 ```
 stock-sentiment-bot/
+├── get_stocks.py           # Scrapes S&P 500 tickers from Wikipedia
 ├── fetch_news.py           # Fetches news headlines for specific stocks
 ├── analyze_sentiment.py    # Analyzes sentiment using FinBERT
 ├── send_discord.py         # Sends message to first available Discord channel
