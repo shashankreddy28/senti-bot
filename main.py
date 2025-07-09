@@ -4,6 +4,7 @@ from get_stocks import get_sp500_tickers
 import asyncio
 from send_discord import send_discord_message
 from datetime import datetime
+import argparse
 
 def run_bot():
     stocks_to_analyze = get_sp500_tickers()
@@ -66,7 +67,16 @@ def run_bot():
     if len(message) > 2000:
         print("Message too long, truncating...", "length:", len(message))
         message = message[:1997] + "..."
-    asyncio.run(send_discord_message(message))
+    asyncio.run(send_discord_message(message, channel_name="stock-sentiment"))
 
 if __name__ == "__main__":
-    run_bot()
+    parser = argparse.ArgumentParser(description="Run the stock sentiment bot.")
+    parser.add_argument("--test", action="store_true", help="Run the bot immediately for testing purposes.")
+    args = parser.parse_args()
+
+    if args.test:
+        run_bot()
+    else:
+        # This part would be for scheduled runs, e.g., using cron
+        # For now, we'll just run it if not in test mode
+        run_bot()

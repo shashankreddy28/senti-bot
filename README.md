@@ -8,7 +8,7 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 - Fetches financial news for the top 25 S&P 500 stocks.
 - Analyzes overall daily sentiment using FinBERT (a language model specialized for financial text).
 - Identifies and highlights the top 5 best and worst performing stocks based on sentiment, including their top headlines.
-- Provides overall top headlines from general news.
+- Provides overall top headlines from general news with embedded links.
 - Posts a market summary to your Discord server automatically.
 
 ---
@@ -53,14 +53,14 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 - Mastercard's Vocalink Gets $16.2 Million BOE Fine for Compliance Failures
 
 ✨ **Overall Top Headlines**
-- Here are five charts investors should be watching right now
-- Should Apple replace Tim Cook as CEO? These analysts want a dramatic change.
-- Chaos continues at Elon Musk’s X with departure of CEO Linda Yaccarino
-- Buy this stock if you want copper exposure, analyst says
-- TikTok is reportedly readying a standalone U.S. app. It could set the stage for a long-awaited spinoff.
-- Millennials say they need $847,000 to feel ‘comfortable’ financially. Here’s how much Gen Z, Gen X and boomers want.
-- Tesla investors ask: When’s the shareholder meeting?
-- Big Tech rallies — plus, where we stand on Starbucks after China stake offers
+- [Here are five charts investors should be watching right now](https://www.marketwatch.com/story/here-are-five-charts-investors-should-be-watching-right-now-50723187)
+- [Should Apple replace Tim Cook as CEO? These analysts want a dramatic change.](https://www.marketwatch.com/story/should-apple-replace-tim-cook-as-ceo-these-analysts-want-a-dramatic-change-d1e067dd)
+- [Chaos continues at Elon Musk’s X with departure of CEO Linda Yaccarino](https://www.marketwatch.com/story/chaos-continues-at-elon-musks-x-with-departure-of-ceo-linda-yaccarino-af99c2ea)
+- [Buy this stock if you want copper exposure, analyst says](https://www.marketwatch.com/story/buy-this-stock-if-you-want-copper-exposure-analyst-says-bffc660a)
+- [TikTok is reportedly readying a standalone U.S. app. It could set the stage for a long-awaited spinoff.](https://www.marketwatch.com/story/tiktok-is-reportedly-readying-a-standalone-u-s-app-it-could-set-the-stage-for-a-long-awaited-spinoff-50723187)
+- [Millennials say they need $847,000 to feel ‘comfortable’ financially. Here’s how much Gen Z, Gen X and boomers want.](https://www.marketwatch.com/story/millennials-say-they-need-847-000-to-feel-comfortable-financially-heres-how-much-gen-z-gen-x-and-boomers-want-50723187)
+- [Tesla investors ask: When’s the shareholder meeting?](https://www.marketwatch.com/story/tesla-investors-ask-whens-the-shareholder-meeting-50723187)
+- [Big Tech rallies — plus, where we stand on Starbucks after China stake offers](https://www.marketwatch.com/story/big-tech-rallies-plus-where-we-stand-on-starbucks-after-china-stake-offers-50723187)
 ```
 
 ---
@@ -92,6 +92,8 @@ DISCORD_TOKEN=your_discord_bot_token
 4. Copy the URL → Paste in browser → Invite the bot to your server
 5. That’s it! The bot will post to the **first available text channel**.
 
+**Note on Channel Selection:** By default, the bot will attempt to send messages to a channel named `stock-sentiment`. If this channel does not exist in any server the bot is a member of, it will send the message to the first available text channel it finds. You can change the target channel name by modifying the `channel_name` argument in the `send_discord_message` function call within `main.py`.
+
 ---
 
 ## ▶️ Run the Bot
@@ -102,10 +104,50 @@ python main.py
 ---
 
 ## 🔄 Automate It (Optional)
-Set up a daily message using:
-- **cron** (local or server)
-- **Replit + schedule**
-- **GitHub Actions**
+To automate the bot to run daily 1 hour before market open (8:30 AM ET, Monday-Friday):
+
+### 1. Create a Shell Script (e.g., `run_bot.sh`)
+Create a file named `run_bot.sh` in the root directory of your project with the following content:
+```bash
+#!/bin/bash
+
+# Navigate to the bot's directory
+cd /path/to/your/senti-bot
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Run the Python script
+python main.py
+
+# Deactivate the virtual environment (optional)
+deactivate
+```
+**Remember to replace `/path/to/your/senti-bot` with the actual absolute path to your project directory.**
+
+### 2. Make the Shell Script Executable
+```bash
+chmod +x run_bot.sh
+```
+
+### 3. Schedule with Cron
+Open your crontab for editing:
+```bash
+crontab -e
+```
+Add the following line to schedule the script to run at 8:30 AM ET, Monday through Friday:
+```cron
+30 8 * * 1-5 /path/to/your/senti-bot/run_bot.sh >> /path/to/your/senti-bot/cron.log 2>&1
+```
+**Again, replace `/path/to/your/senti-bot` with the actual absolute path to your project directory.**
+
+This cron job will:
+- Run at 8:30 AM (30 minutes past 8 AM).
+- Every day of the month (`*`).
+- Every month (`*`).
+- On weekdays (1-5, where 1 is Monday and 5 is Friday).
+- Execute your `run_bot.sh` script.
+- Redirect all standard output and standard error to `cron.log` for logging purposes.
 
 ---
 
