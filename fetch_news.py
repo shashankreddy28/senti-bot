@@ -9,7 +9,7 @@ FINNHUB_API_KEY = os.getenv("FINNHUB_API_KEY")
 def get_general_news():
     """
     Fetches general news headlines and summaries since the previous market close (4:00 PM ET).
-    Returns a list of dictionaries containing headlines and summaries.
+    Returns a list of dictionaries containing headlines, summaries, and URLs.
     """
     # Initialize Finnhub client
     finnhub_client = finnhub.Client(api_key=FINNHUB_API_KEY)
@@ -28,11 +28,12 @@ def get_general_news():
         # Fetch general market news
         news = finnhub_client.general_news('general', min_id=0)
         
-        # Filter news by date and extract headlines and summaries
+        # Filter news by date and extract headlines, summaries, and URLs
         filtered_news = [
             {
                 "headline": article["headline"],
-                "summary": article["summary"]
+                "summary": article["summary"],
+                "url": article["url"]
             }
             for article in news
             if datetime.fromtimestamp(article["datetime"]) >= market_close

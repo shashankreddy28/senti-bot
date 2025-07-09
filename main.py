@@ -53,8 +53,9 @@ def run_bot():
         if general_news_items:
             message += "\n✨ **Overall Top Headlines**\n"
             for item in general_news_items:
-                if len(message) + len(item['headline']) + 30 < 2000: # Estimate space for formatting
-                    message += f"- {item['headline']}\n"
+                # Estimate space for formatting: [Headline](URL) + newline
+                if len(message) + len(item['headline']) + len(item['url']) + 10 < 2000:
+                    message += f"- [{item['headline']}]({item['url']})\n"
                 else:
                     break
 

@@ -37,8 +37,8 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 - Mar Vista U.S. Quality Q2 2025 Commentary
 **PFE** - Sentiment: 🟢 Positive (0.50)
 - Companies Like Pfizer Inc (PFE) are Boosting the Cannabis Light Market
-**AMZN** - Sentiment: 🟢 Positive (0.43)
-- IHerb Welcomes Hyeyoung Moon as Chief Revenue Officer; Former LG, Amazon and Starbucks Exec Joins iHerb to Drive Customer Acquisition and Brand Loyalty in the U.S. and Priority Global Markets
+**AMZN** - Sentiment: 🟢 Positive (0.40)
+- VideoAmp Empowers Advertisers with Cloud-Native Measurement Using Privacy- Enhanceancing Controls with AWS Clean Rooms
 
 📉 **Top 5 Worst Performers**
 **META** - Sentiment: 🔴 Negative (-0.25)
@@ -53,10 +53,14 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 - Mastercard's Vocalink Gets $16.2 Million BOE Fine for Compliance Failures
 
 ✨ **Overall Top Headlines**
+- Here are five charts investors should be watching right now
+- Should Apple replace Tim Cook as CEO? These analysts want a dramatic change.
 - Chaos continues at Elon Musk’s X with departure of CEO Linda Yaccarino
 - Buy this stock if you want copper exposure, analyst says
-
-#StockMarket #FinanceBot
+- TikTok is reportedly readying a standalone U.S. app. It could set the stage for a long-awaited spinoff.
+- Millennials say they need $847,000 to feel ‘comfortable’ financially. Here’s how much Gen Z, Gen X and boomers want.
+- Tesla investors ask: When’s the shareholder meeting?
+- Big Tech rallies — plus, where we stand on Starbucks after China stake offers
 ```
 
 ---
