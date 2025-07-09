@@ -88,7 +88,6 @@ MIT License – feel free to fork, modify, and deploy your own version.
 ```
 stock-sentiment-bot/
 ├── fetch_news.py           # Fetches top news headlines
-
 ├── analyze_sentiment.py    # Analyzes overall sentiment
 ├── send_discord.py         # Sends message to first available Discord channel
 ├── main.py                 # Entry point
