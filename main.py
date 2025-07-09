@@ -14,7 +14,6 @@ Top News:
 - {headlines[0]}
 - {headlines[1]}
 #StockMarket #FinanceBot"""
-    # post_to_twitter(message)
     print(message)  # For testing purposes
     asyncio.run(send_discord_message(message))
 if __name__ == "__main__":
