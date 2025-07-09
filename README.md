@@ -69,7 +69,7 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 
 ### 1. Clone the Repo & Install Requirements
 ```bash
-git clone https://github.com/your-username/stock-sentiment-bot.git
+git clone https://github.com/shashankreddy28/senti-bot.git
 cd stock-sentiment-bot
 pip install -r requirements.txt
 ```
@@ -140,9 +140,9 @@ Open your crontab for editing:
 ```bash
 crontab -e
 ```
-Add the following line to schedule the script to run at 8:30 AM ET, Monday through Friday:
+Add the following line to schedule the script to run at 8:00 AM ET, Monday through Friday:
 ```cron
-30 8 * * 1-5 /path/to/your/senti-bot/run_bot.sh >> /path/to/your/senti-bot/cron.log 2>&1
+0 8 * * 1-5 /path/to/your/senti-bot/run_bot.sh >> /path/to/your/senti-bot/cron.log 2>&1
 ```
 **Again, replace `/path/to/your/senti-bot` with the actual absolute path to your project directory.**
 
@@ -159,11 +159,6 @@ This cron job will:
 ## ☁️ Free Hosting Options
 
 Here are a few options for hosting your bot for free:
-
-### 1. PythonAnywhere
-- **Pros:** Excellent for Python scripts and web apps, built-in cron-like task scheduler, easy to set up.
-- **Cons:** Free tier has limitations on CPU time and network access.
-- **Setup:** Upload your code, set up a virtual environment, and configure a scheduled task (under the "Tasks" tab) to run your `main.py` script at the desired time.
 
 ### 2. Replit
 - **Pros:** Easy to use online IDE, supports many languages, can keep bots running 24/7 (though free tier might require some workarounds to prevent sleeping).
