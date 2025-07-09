@@ -3,3 +3,4 @@ tweepy
 nltk
 textblob
 python-dotenv
+discord

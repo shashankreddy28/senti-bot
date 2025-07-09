@@ -1,3 +1,4 @@
+# currently unused
 import tweepy
 import os
 from dotenv import load_dotenv
@@ -12,4 +13,9 @@ def post_to_twitter(message):
         os.getenv("X_ACCESS_SECRET")
     )
     api = tweepy.API(auth)
+    api.send_direct_message(
+        os.getenv("X_RECIEVER_USER_ID"),  # Replace with your user ID
+        message
+    )
+
     api.update_status(message)
