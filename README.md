@@ -4,16 +4,13 @@ Bot that can analyse daily sentiment of the stop market and summerize news in sh
 A simple Twitter/X bot that fetches the top stock market news of the day, analyzes the sentiment using natural language processing, and posts a concise summary.
 
 ✅ Built with Python, Finnhub API, TextBlob, and Tweepy.
-🚀 Features
+# 🚀 Features
 Fetches the latest financial news headlines
-
 Performs sentiment analysis on headlines
-
 Posts a daily sentiment summary on Twitter/X
-
 Modular codebase: fetch_news, analyze_sentiment, post_tweet
 
-📸 Sample Output (Tweet)
+# 📸 Sample Output (Tweet)
 markdown
 Copy
 Edit
@@ -23,18 +20,15 @@ Top News:
 - Markets fall after Fed signals higher-for-longer rates
 - Apple and Tesla lead tech pullback
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 Python
-
 Finnhub API – For financial news
-
 TextBlob – Sentiment analysis
-
 Tweepy – Twitter API wrapper
-
 .env – Secure storage of API keys
 
-🧪 Quick Setup
+# 🧪 Quick Setup
+
 1. Clone the Repository
 git clone https://github.com/shashankreddy28/stock-sentiment-bot.git
 cd stock-sentiment-bot
