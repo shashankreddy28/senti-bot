@@ -36,7 +36,7 @@ cd stock-sentiment-bot
 2. Install Dependencies
 
 pip install -r requirements.txt
-# OR manually:
+OR manually:
 pip install requests tweepy nltk textblob python-dotenv
 
 3. Create a .env File
