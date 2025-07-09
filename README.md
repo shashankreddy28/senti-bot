@@ -74,7 +74,7 @@ cd stock-sentiment-bot
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-deactivate
+deactivate # Once you are done
 ```
 
 ### 2. Create `.env` with Your API Keys
