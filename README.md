@@ -68,7 +68,8 @@ TWITTER_ACCESS_SECRET=your_access_secret
 python main.py or python3 main.py
 
 🧰 File Structure
-stock-sentiment-bot/
+stock-sentiment-bot/  
+
 ├── fetch_news.py           # Fetches top news headlines
 
 ├── analyze_sentiment.py    # Analyzes overall sentiment
