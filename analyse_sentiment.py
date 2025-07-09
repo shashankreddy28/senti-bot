@@ -43,6 +43,21 @@ def get_average_sentiment(sentiments):
         return 0
     return sum(sentiments) / len(sentiments)
 
+def get_expected_change(sentiment_score):
+    """
+    Interprets the sentiment score as an expected change.
+    """
+    if sentiment_score > 0.5:
+        return "Strongly Positive"
+    elif sentiment_score > 0.1:
+        return "Positive"
+    elif sentiment_score < -0.5:
+        return "Strongly Negative"
+    elif sentiment_score < -0.1:
+        return "Negative"
+    else:
+        return "Neutral"
+
 if __name__ == "__main__":
     stocks_to_analyze = ["AAPL", "GOOGL", "MSFT"]
     stock_news = get_stock_news(stocks_to_analyze)
@@ -51,6 +66,7 @@ if __name__ == "__main__":
         if news_items:
             sentiment_scores = analyze_sentiment(news_items)
             average_sentiment = get_average_sentiment(sentiment_scores)
-            print(f"Average sentiment for {stock}: {average_sentiment}")
+            expected_change = get_expected_change(average_sentiment)
+            print(f"Average sentiment for {stock}: {average_sentiment:.2f} ({expected_change})")
         else:
             print(f"No news found for {stock}.")
