@@ -71,7 +71,10 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 ```bash
 git clone https://github.com/shashankreddy28/senti-bot.git
 cd stock-sentiment-bot
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
+deactivate
 ```
 
 ### 2. Create `.env` with Your API Keys
