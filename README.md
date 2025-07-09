@@ -1,5 +1,3 @@
-
-
 # 📊 Stock Market Sentiment Bot (Discord Edition)
 
 A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, analyzes sentiment using FinBERT, and posts a market update to your server, highlighting the best and worst performers.
@@ -19,7 +17,6 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 - Python  
 - Finnhub API (for financial news)  
 - Transformers & PyTorch (for sentiment analysis with FinBERT)  
-- Pandas, BeautifulSoup4, lxml (for scraping S&P 500 tickers)
 - discord.py (to send automated messages)  
 - dotenv (to keep secrets out of code)
 
@@ -29,35 +26,35 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 ```
 📊 **Stock Market Sentiment** (July 09)
 
-**Overall Sentiment:** 🟡 Neutral (0.09)
+**Overall Sentiment:** 🟡 Neutral (0.07)
 
 📈 **Top 5 Best Performers**
-**ADBE** - Sentiment: 🟢 Strongly Positive (1.00)
-- Adobe (NASDAQ:ADBE) Is Investing Its Capital With Increasing Efficiency
-**AMCR** - Sentiment: 🟢 Strongly Positive (1.00)
-- Jefferies Initiates “Buy” on Amcor (AMCR), Sets Price Target at $12 on Strong Market Position
-**ABT** - Sentiment: 🟢 Positive (0.50)
-- Biomarkers Market Research Report 2025-2030 | Assay Kit Demand Surges as Advancements in Omics Technologies Elevate Biomarker Discovery and Diagnostic Precision
+**JPM** - Sentiment: 🟢 Strongly Positive (1.00)
+- JP Morgan CEO to Handelsblatt: we want to invest further in Germany
+**LLY** - Sentiment: 🟢 Strongly Positive (0.67)
+- Eli Lilly: new recommended dosage for Kisunla
+**V** - Sentiment: 🟢 Positive (0.50)
+- Mar Vista U.S. Quality Q2 2025 Commentary
+**PFE** - Sentiment: 🟢 Positive (0.50)
+- Companies Like Pfizer Inc (PFE) are Boosting the Cannabis Light Market
 **AMZN** - Sentiment: 🟢 Positive (0.43)
 - IHerb Welcomes Hyeyoung Moon as Chief Revenue Officer; Former LG, Amazon and Starbucks Exec Joins iHerb to Drive Customer Acquisition and Brand Loyalty in the U.S. and Priority Global Markets
-**ACN** - Sentiment: 🟡 Neutral (0.00)
-- Accenture (ACN) Buy SYSTEMA to Support Manufacturing Automation for Semiconductor Clients
 
 📉 **Top 5 Worst Performers**
-**MO** - Sentiment: 🟡 Neutral (0.00)
-- Altria: Jefferies initiates coverage says 'sell'
-**AEE** - Sentiment: 🟡 Neutral (0.00)
-- Ameren Corporation Second Quarter 2025 Earnings Webcast Aug. 1, 2025
-**GOOGL** - Sentiment: 🟡 Neutral (-0.03)
-- Meta Has Surged on the Back of AI Software. Why Hardware Is the Next Play.
-**GOOG** - Sentiment: 🔴 Negative (-0.14)
-- Inside Tesla's Robotaxi Revolution
-**AES** - Sentiment: 🔴 Negative (-0.29)
-- Traders Eye Fed Minutes as US Equity Futures Post Narrow Gains Pre-Bell
+**META** - Sentiment: 🔴 Negative (-0.25)
+- EssilorLuxottica shares jump after reports that Meta bought 3% stake
+**BAC** - Sentiment: 🔴 Negative (-0.25)
+- Bank Of America: Structural Compounder, But No Urgency To Buy Today
+**TSLA** - Sentiment: 🔴 Negative (-0.33)
+- ON Semiconductor: Tesla And Aehr Test Systems Are The Sell Signal After 80% Run
+**PG** - Sentiment: 🔴 Strongly Negative (-1.00)
+- Why Procter & Gamble (PG) Dipped More Than Broader Market Today
+**MA** - Sentiment: 🔴 Strongly Negative (-1.00)
+- Mastercard's Vocalink Gets $16.2 Million BOE Fine for Compliance Failures
 
 ✨ **Overall Top Headlines**
+- Chaos continues at Elon Musk’s X with departure of CEO Linda Yaccarino
 - Buy this stock if you want copper exposure, analyst says
-- TikTok is reportedly readying a standalone U.S. app. It could set the stage for a long-awaited spinoff.
 
 #StockMarket #FinanceBot
 ```
@@ -118,7 +115,7 @@ MIT License – feel free to fork, modify, and deploy your own version.
 
 ```
 stock-sentiment-bot/
-├── get_stocks.py           # Scrapes S&P 500 tickers from Wikipedia
+├── get_stocks.py           # Provides a hardcoded list of 25 popular stock tickers
 ├── fetch_news.py           # Fetches news headlines for specific stocks
 ├── analyze_sentiment.py    # Analyzes sentiment using FinBERT
 ├── send_discord.py         # Sends message to first available Discord channel
@@ -127,4 +124,3 @@ stock-sentiment-bot/
 ├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
 ```
-

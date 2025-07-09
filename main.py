@@ -52,10 +52,14 @@ def run_bot():
         # Overall Top Headlines (from general news)
         if general_news_items:
             message += "\n✨ **Overall Top Headlines**\n"
-            for item in general_news_items[:2]: # Top 2 general headlines
-                message += f"- {item['headline']}\n"
+            for item in general_news_items:
+                if len(message) + len(item['headline']) + 30 < 2000: # Estimate space for formatting
+                    message += f"- {item['headline']}\n"
+                else:
+                    break
 
-    message += "\n#StockMarket #FinanceBot"
+    # Remove hashtags
+    # message += "\n#StockMarket #FinanceBot"
 
     print(message)  # For testing purposes
     if len(message) > 2000:
