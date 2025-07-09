@@ -7,6 +7,3 @@ discord
 finnhub-python
 transformers
 torch
-pandas
-beautifulsoup4
-lxml

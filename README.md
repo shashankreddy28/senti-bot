@@ -1,4 +1,5 @@
 
+
 # 📊 Stock Market Sentiment Bot (Discord Edition)
 
 A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, analyzes sentiment using FinBERT, and posts a market update to your server, highlighting the best and worst performers.
@@ -8,7 +9,8 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 ## 🚀 Features
 - Fetches financial news for the top 25 S&P 500 stocks.
 - Analyzes overall daily sentiment using FinBERT (a language model specialized for financial text).
-- Identifies and highlights the best and worst performing stocks based on sentiment.
+- Identifies and highlights the top 5 best and worst performing stocks based on sentiment, including their top headlines.
+- Provides overall top headlines from general news.
 - Posts a market summary to your Discord server automatically.
 
 ---
@@ -27,21 +29,35 @@ A Discord bot that fetches daily financial news for the top 25 S&P 500 stocks, a
 ```
 📊 **Stock Market Sentiment** (July 09)
 
-**Overall Sentiment:** Neutral (0.09)
+**Overall Sentiment:** 🟡 Neutral (0.09)
 
-📈 **Best Performer**
-**ADBE** - Sentiment: Strongly Positive (1.00)
-- **Headline:** Adobe (NASDAQ:ADBE) Is Investing Its Capital With Increasing Efficiency
-  **Summary:** What trends should we look for it we want to identify stocks that can multiply in value over the long term? In a...
-- **Headline:** 2 Phenomenal Stock Bargains to Buy With the Market at All-Time Highs
-  **Summary:** The market assumes that generative AI will replace the Google Search engine.  Adobe's generative AI-powered image and video creation tools are industry-leading.  With the stock market at new all-time highs, investors may be a bit wary of buying stocks right now.
+📈 **Top 5 Best Performers**
+**ADBE** - Sentiment: 🟢 Strongly Positive (1.00)
+- Adobe (NASDAQ:ADBE) Is Investing Its Capital With Increasing Efficiency
+**AMCR** - Sentiment: 🟢 Strongly Positive (1.00)
+- Jefferies Initiates “Buy” on Amcor (AMCR), Sets Price Target at $12 on Strong Market Position
+**ABT** - Sentiment: 🟢 Positive (0.50)
+- Biomarkers Market Research Report 2025-2030 | Assay Kit Demand Surges as Advancements in Omics Technologies Elevate Biomarker Discovery and Diagnostic Precision
+**AMZN** - Sentiment: 🟢 Positive (0.43)
+- IHerb Welcomes Hyeyoung Moon as Chief Revenue Officer; Former LG, Amazon and Starbucks Exec Joins iHerb to Drive Customer Acquisition and Brand Loyalty in the U.S. and Priority Global Markets
+**ACN** - Sentiment: 🟡 Neutral (0.00)
+- Accenture (ACN) Buy SYSTEMA to Support Manufacturing Automation for Semiconductor Clients
 
-📉 **Worst Performer**
-**AES** - Sentiment: Negative (-0.29)
-- **Headline:** Traders Eye Fed Minutes as US Equity Futures Post Narrow Gains Pre-Bell
-  **Summary:** US equity futures posted narrow gains before Wednesday's opening bell as traders looked ahead to the
-- **Headline:** AES Stock Jumps on Report That Renewable Energy Firm Is Exploring Sale
-  **Summary:** Shares in AES Corp. are jumping in premarket trading Wednesday as the renewable energy firm reportedly explores selling itself, among other options, as it faces takeover interest.
+📉 **Top 5 Worst Performers**
+**MO** - Sentiment: 🟡 Neutral (0.00)
+- Altria: Jefferies initiates coverage says 'sell'
+**AEE** - Sentiment: 🟡 Neutral (0.00)
+- Ameren Corporation Second Quarter 2025 Earnings Webcast Aug. 1, 2025
+**GOOGL** - Sentiment: 🟡 Neutral (-0.03)
+- Meta Has Surged on the Back of AI Software. Why Hardware Is the Next Play.
+**GOOG** - Sentiment: 🔴 Negative (-0.14)
+- Inside Tesla's Robotaxi Revolution
+**AES** - Sentiment: 🔴 Negative (-0.29)
+- Traders Eye Fed Minutes as US Equity Futures Post Narrow Gains Pre-Bell
+
+✨ **Overall Top Headlines**
+- Buy this stock if you want copper exposure, analyst says
+- TikTok is reportedly readying a standalone U.S. app. It could set the stage for a long-awaited spinoff.
 
 #StockMarket #FinanceBot
 ```
@@ -111,3 +127,4 @@ stock-sentiment-bot/
 ├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
 ```
+
